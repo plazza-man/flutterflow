@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "805598234739",
+    "project_id": "assignment-lt408q",
+    "storage_bucket": "assignment-lt408q.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805598234739:android:c951bee0fce9047dafc206",
+        "android_client_info": {
+          "package_name": "com.mycompany.assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRYXkoEU_6KWRY3FOYVoMjZGRZ8JOi9_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
