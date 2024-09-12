@@ -18,9 +18,9 @@ enum PaymentStatus {
 const bool _isProd = false;
 
 // Razorpay Credentials
-const _kProdRazorpayKeyId = 'rzp_live_13nfx7eGyPUdLb';
+const _kProdRazorpayKeyId = '';
 const _kTestRazorpayKeyId = 'rzp_test_CXbZJ7lTt7sYmL';
-const _kBusinessName = 'Shiplock technologies pvt ltd';
+const _kBusinessName = 'Test';
 
 String get razorpayKeyId => _isProd ? _kProdRazorpayKeyId : _kTestRazorpayKeyId;
 String get createOrderCallName => _isProd ? 'createOrder' : 'testCreateOrder';
@@ -164,11 +164,14 @@ class _RazorpayPaymentSheetState extends State<RazorpayPaymentSheet> {
       paymentId: response.paymentId ?? '',
       signature: response.signature ?? '',
     );
-    if (isValid) {
-      setState(() => _paymentStatus = PaymentStatus.success);
-    } else {
-      setState(() => _paymentStatus = PaymentStatus.failed);
+    if (mounted) {
+      if (isValid) {
+        setState(() => _paymentStatus = PaymentStatus.success);
+      } else {
+        setState(() => _paymentStatus = PaymentStatus.failed);
+      }
     }
+
     widget.onPaymentStateChange(response.paymentId!);
     Future.delayed(
       const Duration(seconds: 2),
@@ -177,11 +180,13 @@ class _RazorpayPaymentSheetState extends State<RazorpayPaymentSheet> {
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    setState(() {
-      _processingOrderDetails = null;
-      _paymentStatus = PaymentStatus.failed;
-      _paymentResponseMessage = response.message ?? '';
-    });
+    if (mounted) {
+      setState(() {
+        _processingOrderDetails = null;
+        _paymentStatus = PaymentStatus.failed;
+        _paymentResponseMessage = response.message ?? '';
+      });
+    }
     widget.onPaymentStateChange(null);
     Future.delayed(
       const Duration(seconds: 2),
@@ -211,7 +216,9 @@ class _RazorpayPaymentSheetState extends State<RazorpayPaymentSheet> {
   }
 
   Future<void> _checkoutOrder() async {
-    setState(() => _processingOrderDetails = null);
+    if (mounted) {
+      setState(() => _processingOrderDetails = null);
+    }
     try {
       final response = await makeCloudCall(
         createOrderCallName,
@@ -223,7 +230,9 @@ class _RazorpayPaymentSheetState extends State<RazorpayPaymentSheet> {
         },
       );
       final orderDetails = ProcessingOrder.fromMap(response);
-      setState(() => _processingOrderDetails = orderDetails);
+      if (mounted) {
+        setState(() => _processingOrderDetails = orderDetails);
+      }
     } on FirebaseFunctionsException catch (error) {
       debugPrint('ERROR: ${error.code} (${error.details}): ${error.message}');
     }

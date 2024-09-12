@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:805598234739:android:c951bee0fce9047dafc206",
+        "mobilesdk_app_id": "1:805598234739:android:a353c0c0292663e7afc206",
         "android_client_info": {
-          "package_name": "com.mycompany.assignment"
+          "package_name": "com.plazza"
         }
       },
       "oauth_client": [],

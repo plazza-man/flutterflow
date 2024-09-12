@@ -1,4 +1,4 @@
-# assignment
+# Plazza
 
 A new Flutter project.
 

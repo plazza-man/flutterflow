@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class AssignmentFirebaseUser extends BaseAuthUser {
-  AssignmentFirebaseUser(this.user);
+class PlazzaFirebaseUser extends BaseAuthUser {
+  PlazzaFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -54,18 +54,17 @@ class AssignmentFirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) =>
-      AssignmentFirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => PlazzaFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> assignmentFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> plazzaFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = AssignmentFirebaseUser(user);
+        currentUser = PlazzaFirebaseUser(user);
         return currentUser!;
       },
     );

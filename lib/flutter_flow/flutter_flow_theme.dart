@@ -33,6 +33,15 @@ abstract class FlutterFlowTheme {
   late Color info;
 
   late Color bottomNavbarIconcolor;
+  late Color backArrowColor;
+  late Color plazzaNewPrimaryPink;
+  late Color buttonBorderColor;
+  late Color buttonTextColor;
+  late Color textColor;
+  late Color iconColor;
+  late Color customColorMedicine;
+  late Color customColor1;
+  late Color customColor2;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -105,16 +114,16 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
+  late Color primary = const Color(0xFFE51A83);
   late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
+  late Color tertiary = const Color(0xFFF7F7F7);
   late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF14181B);
-  late Color secondaryText = const Color(0xFF9BADBA);
+  late Color secondaryText = const Color(0xFF7B7B7B);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color accent1 = const Color(0x4C4B39EF);
-  late Color accent2 = const Color(0x4D39D2C0);
+  late Color accent2 = const Color(0xFFD9D9D9);
   late Color accent3 = const Color(0x4DEE8B60);
   late Color accent4 = const Color(0xCCFFFFFF);
   late Color success = const Color(0xFF249689);
@@ -123,6 +132,15 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFFFFFFFF);
 
   late Color bottomNavbarIconcolor = const Color(0xFFE51A83);
+  late Color backArrowColor = const Color(0xFF4A4A4A);
+  late Color plazzaNewPrimaryPink = const Color(0xFFFF0083);
+  late Color buttonBorderColor = const Color(0xFFECECEC);
+  late Color buttonTextColor = const Color(0xFFB7B7B7);
+  late Color textColor = const Color(0xFF7B7B7B);
+  late Color iconColor = const Color(0xFFF7F7F7);
+  late Color customColorMedicine = const Color(0xFF119199);
+  late Color customColor1 = const Color(0xFFDBE8FF);
+  late Color customColor2 = const Color(0xFF256FEF);
 }
 
 abstract class Typography {
@@ -163,108 +181,108 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Outfit';
+  String get displayLargeFamily => 'Figtree';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 64.0,
-      );
-  String get displayMediumFamily => 'Outfit';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 44.0,
-      );
-  String get displaySmallFamily => 'Outfit';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
+        'Figtree',
+        color: theme.backArrowColor,
         fontWeight: FontWeight.w600,
+        fontSize: 26.0,
+      );
+  String get displayMediumFamily => 'Figtree';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.normal,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Outfit';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
+  String get displaySmallFamily => 'Figtree';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
         fontWeight: FontWeight.w600,
-        fontSize: 32.0,
+        fontSize: 20.0,
       );
-  String get headlineMediumFamily => 'Outfit';
+  String get headlineLargeFamily => 'Figtree';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.w800,
+        fontSize: 20.0,
+      );
+  String get headlineMediumFamily => 'Figtree';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        'Figtree',
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0,
       );
-  String get headlineSmallFamily => 'Outfit';
+  String get headlineSmallFamily => 'Figtree';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w500,
-        fontSize: 24.0,
-      );
-  String get titleLargeFamily => 'Outfit';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w500,
-        fontSize: 22.0,
-      );
-  String get titleMediumFamily => 'Readex Pro';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.info,
-        fontWeight: FontWeight.normal,
-        fontSize: 18.0,
-      );
-  String get titleSmallFamily => 'Readex Pro';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.info,
-        fontWeight: FontWeight.w500,
-        fontSize: 16.0,
-      );
-  String get labelLargeFamily => 'Readex Pro';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 16.0,
-      );
-  String get labelMediumFamily => 'Readex Pro';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        'Figtree',
+        color: Colors.white,
+        fontWeight: FontWeight.w300,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Readex Pro';
+  String get titleLargeFamily => 'Figtree';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.textColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get titleMediumFamily => 'Figtree';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get titleSmallFamily => 'Figtree';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 13.0,
+      );
+  String get labelLargeFamily => 'Figtree';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Figtree',
+        color: Colors.white,
+        fontWeight: FontWeight.w300,
+        fontSize: 17.0,
+      );
+  String get labelMediumFamily => 'Figtree';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 19.0,
+      );
+  String get labelSmallFamily => 'Figtree';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.secondaryText,
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 17.0,
+      );
+  String get bodyLargeFamily => 'Figtree';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get bodyMediumFamily => 'Figtree';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Figtree',
+        color: theme.backArrowColor,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Readex Pro';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 16.0,
-      );
-  String get bodyMediumFamily => 'Readex Pro';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 14.0,
-      );
-  String get bodySmallFamily => 'Readex Pro';
+  String get bodySmallFamily => 'Figtree';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Readex Pro',
-        color: theme.primaryText,
+        'Figtree',
+        color: const Color(0xFF256FEF),
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );

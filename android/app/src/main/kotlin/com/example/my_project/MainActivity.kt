@@ -1,4 +1,4 @@
-package com.mycompany.assignment
+package com.plazza
 
 import io.flutter.embedding.android.FlutterActivity
 

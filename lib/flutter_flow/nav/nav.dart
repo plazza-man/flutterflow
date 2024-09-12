@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -71,12 +73,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn ? () : (),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const HomePageWidget() : const OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn ? () : (),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const HomePageWidget() : const OnboardingWidget(),
         ),
         FFRoute(
           name: 'CheckEligibility',
@@ -89,14 +93,174 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const PlazzaHomepageWidget(),
         ),
         FFRoute(
-          name: 'CheckEligibilityCopy',
-          path: '/checkEligibilityCopy',
-          builder: (context, params) => const CheckEligibilityCopyWidget(),
-        ),
-        FFRoute(
           name: 'cartPage',
           path: '/cartPage',
           builder: (context, params) => const CartPageWidget(),
+        ),
+        FFRoute(
+          name: 'onboarding',
+          path: '/onboarding',
+          builder: (context, params) => const OnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions1',
+          path: '/eligibilityQuestions1',
+          builder: (context, params) => const EligibilityQuestions1Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions2',
+          path: '/eligibilityQuestions2',
+          builder: (context, params) => const EligibilityQuestions2Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions3',
+          path: '/eligibilityQuestions3',
+          builder: (context, params) => const EligibilityQuestions3Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions4',
+          path: '/eligibilityQuestions4',
+          builder: (context, params) => const EligibilityQuestions4Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions5',
+          path: '/eligibilityQuestions5',
+          builder: (context, params) => const EligibilityQuestions5Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestion6',
+          path: '/eligibilityQuestion6',
+          builder: (context, params) => const EligibilityQuestion6Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestion7',
+          path: '/eligibilityQuestion7',
+          builder: (context, params) => const EligibilityQuestion7Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestion8',
+          path: '/eligibilityQuestion8',
+          builder: (context, params) => const EligibilityQuestion8Widget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestion9',
+          path: '/eligibilityQuestion9',
+          builder: (context, params) => const EligibilityQuestion9Widget(),
+        ),
+        FFRoute(
+          name: 'OtpVerifiction',
+          path: '/otpVerifiction',
+          builder: (context, params) => OtpVerifictionWidget(
+            mobilenumber: params.getParam(
+              'mobilenumber',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Mambershipkyc1',
+          path: '/mambershipkyc1',
+          builder: (context, params) => const Mambershipkyc1Widget(),
+        ),
+        FFRoute(
+          name: 'consultation',
+          path: '/consultation',
+          builder: (context, params) => const ConsultationWidget(),
+        ),
+        FFRoute(
+          name: 'AddFamily',
+          path: '/addFamily',
+          builder: (context, params) => const AddFamilyWidget(),
+        ),
+        FFRoute(
+          name: 'Verifyidentity',
+          path: '/verifyidentity',
+          builder: (context, params) => const VerifyidentityWidget(),
+        ),
+        FFRoute(
+          name: 'medicineHomepage',
+          path: '/medicineHomepage',
+          builder: (context, params) => const MedicineHomepageWidget(),
+        ),
+        FFRoute(
+          name: 'UpdateNumberOtp',
+          path: '/UpdateNumberOtp',
+          builder: (context, params) => UpdateNumberOtpWidget(
+            mobilenumber: params.getParam(
+              'mobilenumber',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Identityverified',
+          path: '/identityverified',
+          builder: (context, params) => const IdentityverifiedWidget(),
+        ),
+        FFRoute(
+          name: 'Schedulehealthcheck-up',
+          path: '/schedulehealthcheckUp',
+          builder: (context, params) => const SchedulehealthcheckUpWidget(),
+        ),
+        FFRoute(
+          name: 'Schedulehealthcheck-up2',
+          path: '/schedulehealthcheckUp2',
+          builder: (context, params) => const SchedulehealthcheckUp2Widget(),
+        ),
+        FFRoute(
+          name: 'Schedulehealthcheck-up3',
+          path: '/schedulehealthcheckUp3',
+          builder: (context, params) => const SchedulehealthcheckUp3Widget(),
+        ),
+        FFRoute(
+          name: 'page1',
+          path: '/page1',
+          builder: (context, params) => const Page1Widget(),
+        ),
+        FFRoute(
+          name: 'page2',
+          path: '/page2',
+          builder: (context, params) => const Page2Widget(),
+        ),
+        FFRoute(
+          name: 'uploadingPrescription',
+          path: '/uploadingPrescription',
+          builder: (context, params) => const UploadingPrescriptionWidget(),
+        ),
+        FFRoute(
+          name: 'History',
+          path: '/history',
+          builder: (context, params) => const HistoryWidget(),
+        ),
+        FFRoute(
+          name: 'medicineCart',
+          path: '/medicineCart',
+          builder: (context, params) => const MedicineCartWidget(),
+        ),
+        FFRoute(
+          name: 'statusOfOrder',
+          path: '/statusOfOrder',
+          builder: (context, params) => const StatusOfOrderWidget(),
+        ),
+        FFRoute(
+          name: 'EligibilityQuestions0',
+          path: '/eligibilityQuestions0',
+          builder: (context, params) => const EligibilityQuestions0Widget(),
+        ),
+        FFRoute(
+          name: 'DencetroCall',
+          path: '/dencetroCall',
+          builder: (context, params) => DencetroCallWidget(
+            url: params.getParam(
+              'url',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'HomePage',
+          path: '/homePage',
+          builder: (context, params) => const HomePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -215,6 +379,8 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -232,6 +398,8 @@ class FFParameters {
       param,
       type,
       isList,
+      collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
@@ -265,7 +433,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/';
+            return '/onboarding';
           }
           return null;
         },
@@ -279,14 +447,13 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
+              ? Container(
+                  color: FlutterFlowTheme.of(context).primary,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/Property_1=White.png',
+                      width: MediaQuery.sizeOf(context).width * 0.7,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )

@@ -10,8 +10,8 @@ const kTestKeyId = "rzp_test_CXbZJ7lTt7sYmL";
 const kTestKeySecret = "dKitN2u3P1q7sGk8HT36QAb8";
 
 // Prod credentials
-const kProdKeyId = "rzp_live_13nfx7eGyPUdLb";
-const kProdKeySecret = "z8KFPcSV9G4bzse3LSQ4tqMO";
+const kProdKeyId = "";
+const kProdKeySecret = "";
 
 const keyId = (isProd) => (isProd ? kProdKeyId : kTestKeyId);
 const keySecret = (isProd) => (isProd ? kProdKeySecret : kTestKeySecret);
@@ -92,3 +92,8 @@ function isValidSignature(data, isProd) {
   const isSignatureValid = generatedSignature === data.signature;
   return { isValid: isSignatureValid };
 }
+exports.onUserDeleted = functions.auth.user().onDelete(async (user) => {
+  let firestore = admin.firestore();
+  let userRef = firestore.doc("users/" + user.uid);
+  await firestore.collection("users").doc(user.uid).delete();
+});
