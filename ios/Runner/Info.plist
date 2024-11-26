@@ -28,7 +28,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <!--FF_REVERSED_CLIENT_ID-->
+                <string>com.googleusercontent.apps.843244942407-gcu48t60tbaeismdc13feebk1vrq3cpj</string>
                 
             </array>
         </dict>
@@ -52,14 +52,26 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 
 	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>In order to search nearby, this app requires access to your current location.</string>
+    <string>&quot;Plazza&quot; needs your location to help deliver your order at the right destination</string>
 	<key>NSCameraUsageDescription</key>
-    <string>In order to take a picture or video, this app requires permission to access the camera.</string>
+    <string>&quot;Plazza&quot; needs access to camera to help you click photo of your prescription and use it to order medicines</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>In order to upload data, this app requires permission to access the photo library.</string>
-
+    <string>&quot; Plazza&quot;  needs access to your photos so that you can upload pictures of your prescription for orderinf medicines</string>
+	<key>PermissionGroupNotification</key>
+    <string>"Plazza" needs to send you updates of your orders and other important information</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+    <string>No</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need access to your location to check if our services are available in your locality</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>remote-notification</string>
+    </array>
 
 
 	<key>UILaunchStoryboardName</key>

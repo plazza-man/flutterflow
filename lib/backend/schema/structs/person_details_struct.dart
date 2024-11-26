@@ -1,5 +1,5 @@
 // ignore_for_file: unnecessary_getters_setters
-
+import '/backend/algolia/serialization_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -107,6 +107,34 @@ class PersonDetailsStruct extends FFFirebaseStruct {
           data['gender'],
           ParamType.String,
           false,
+        ),
+      );
+
+  static PersonDetailsStruct fromAlgoliaData(Map<String, dynamic> data) =>
+      PersonDetailsStruct(
+        name: convertAlgoliaParam(
+          data['name'],
+          ParamType.String,
+          false,
+        ),
+        dob: convertAlgoliaParam(
+          data['dob'],
+          ParamType.DateTime,
+          false,
+        ),
+        whatsappno: convertAlgoliaParam(
+          data['whatsappno'],
+          ParamType.String,
+          false,
+        ),
+        gender: convertAlgoliaParam(
+          data['gender'],
+          ParamType.String,
+          false,
+        ),
+        firestoreUtilData: const FirestoreUtilData(
+          clearUnsetFields: false,
+          create: true,
         ),
       );
 

@@ -1,4 +1,4 @@
-package com.plazza
+package com.plazza.app
 
 import io.flutter.embedding.android.FlutterActivity
 

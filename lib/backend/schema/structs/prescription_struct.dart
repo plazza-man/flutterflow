@@ -1,5 +1,5 @@
 // ignore_for_file: unnecessary_getters_setters
-
+import '/backend/algolia/serialization_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -67,6 +67,24 @@ class PrescriptionStruct extends FFFirebaseStruct {
           data['pdfurl'],
           ParamType.String,
           false,
+        ),
+      );
+
+  static PrescriptionStruct fromAlgoliaData(Map<String, dynamic> data) =>
+      PrescriptionStruct(
+        imageurl: convertAlgoliaParam(
+          data['imageurl'],
+          ParamType.String,
+          false,
+        ),
+        pdfurl: convertAlgoliaParam(
+          data['pdfurl'],
+          ParamType.String,
+          false,
+        ),
+        firestoreUtilData: const FirestoreUtilData(
+          clearUnsetFields: false,
+          create: true,
         ),
       );
 

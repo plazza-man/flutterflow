@@ -19,8 +19,8 @@ const bool _isProd = false;
 
 // Razorpay Credentials
 const _kProdRazorpayKeyId = '';
-const _kTestRazorpayKeyId = 'rzp_test_CXbZJ7lTt7sYmL';
-const _kBusinessName = 'Test';
+const _kTestRazorpayKeyId = 'rzp_test_cMNCYn9kxUR0eX';
+const _kBusinessName = 'SHIPLOCK TECHNOLOGIES PRIVATE LIMITED';
 
 String get razorpayKeyId => _isProd ? _kProdRazorpayKeyId : _kTestRazorpayKeyId;
 String get createOrderCallName => _isProd ? 'createOrder' : 'testCreateOrder';

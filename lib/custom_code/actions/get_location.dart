@@ -9,60 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-/*// Automatic FlutterFlow imports
-
-import 'dart:convert'; // For JSON decoding
-import 'package:http/http.dart'
-    as http; // Assuming you're using LatLng class from this package
-
-Future<String> getlocation(String lat, String lng) async {
-  // Extract latitude and longitude from LatLng
-
-  // Define your API key
-  String apiKey = 'Q5XTelKPwPTAe5qLqMg4dGYHDOwACLYf5X34TPEu';
-
-  // Define the API endpoint URL with passed latitude and longitude
-  String apiUrl =
-      "https://api.olamaps.io/places/v1/autocomplete?location=$lat, $lng&input=landmark&api_key=$apiKey";
-
-  // Make an HTTP request to the API endpoint
-  final response = await http.get(Uri.parse(apiUrl));
-
-  // Check if the response was successful
-  if (response.statusCode == 200) {
-    // Print full response to check structure
-    print("Full Response: ${response.body}");
-
-    // Parse the JSON response
-    final data = json.decode(response.body);
-
-    // Check if 'features' exists and has data
-    if (data != null &&
-        data.containsKey('features') &&
-        data['features'].isNotEmpty) {
-      // Extract the first feature's place name and coordinates
-      String locationName = data['features'][0]['place_name'];
-      double locationLat = data['features'][0]['center'][1];
-      double locationLng = data['features'][0]['center'][0];
-
-      // Print the location information
-      print("Location Name: $locationName");
-      print("Location Latitude: $locationLat");
-      print("Location Longitude: $locationLng");
-
-      // Return the location name
-      return locationName;
-    } else {
-      // Handle case where no location is found
-      print('No location found in response');
-      return 'No location found';
-    }
-  } else {
-    // Handle the error
-    print("Error: ${response.statusCode}");
-    return 'Error: ${response.statusCode}';
-  }
-}*/
 import 'dart:convert'; // For JSON decoding
 import 'package:http/http.dart' as http;
 

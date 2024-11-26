@@ -7,6 +7,8 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -74,194 +76,359 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const OnboardingWidget(),
+          appStateNotifier.loggedIn ? const HomeWidget() : const PhoneAuthWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomePageWidget() : const OnboardingWidget(),
-        ),
-        FFRoute(
-          name: 'CheckEligibility',
-          path: '/checkEligibility',
-          builder: (context, params) => const CheckEligibilityWidget(),
-        ),
-        FFRoute(
-          name: 'plazzaHomepage',
-          path: '/plazzaHomepage',
-          builder: (context, params) => const PlazzaHomepageWidget(),
-        ),
-        FFRoute(
-          name: 'cartPage',
-          path: '/cartPage',
-          builder: (context, params) => const CartPageWidget(),
-        ),
-        FFRoute(
-          name: 'onboarding',
-          path: '/onboarding',
-          builder: (context, params) => const OnboardingWidget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions1',
-          path: '/eligibilityQuestions1',
-          builder: (context, params) => const EligibilityQuestions1Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions2',
-          path: '/eligibilityQuestions2',
-          builder: (context, params) => const EligibilityQuestions2Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions3',
-          path: '/eligibilityQuestions3',
-          builder: (context, params) => const EligibilityQuestions3Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions4',
-          path: '/eligibilityQuestions4',
-          builder: (context, params) => const EligibilityQuestions4Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions5',
-          path: '/eligibilityQuestions5',
-          builder: (context, params) => const EligibilityQuestions5Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestion6',
-          path: '/eligibilityQuestion6',
-          builder: (context, params) => const EligibilityQuestion6Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestion7',
-          path: '/eligibilityQuestion7',
-          builder: (context, params) => const EligibilityQuestion7Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestion8',
-          path: '/eligibilityQuestion8',
-          builder: (context, params) => const EligibilityQuestion8Widget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestion9',
-          path: '/eligibilityQuestion9',
-          builder: (context, params) => const EligibilityQuestion9Widget(),
-        ),
-        FFRoute(
-          name: 'OtpVerifiction',
-          path: '/otpVerifiction',
-          builder: (context, params) => OtpVerifictionWidget(
-            mobilenumber: params.getParam(
-              'mobilenumber',
-              ParamType.String,
+              appStateNotifier.loggedIn ? const HomeWidget() : const PhoneAuthWidget(),
+          routes: [
+            FFRoute(
+              name: 'Status',
+              path: 'status',
+              builder: (context, params) => StatusWidget(
+                ticketid: params.getParam(
+                  'ticketid',
+                  ParamType.int,
+                ),
+                pageName: params.getParam(
+                  'pageName',
+                  ParamType.String,
+                ),
+              ),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'Mambershipkyc1',
-          path: '/mambershipkyc1',
-          builder: (context, params) => const Mambershipkyc1Widget(),
-        ),
-        FFRoute(
-          name: 'consultation',
-          path: '/consultation',
-          builder: (context, params) => const ConsultationWidget(),
-        ),
-        FFRoute(
-          name: 'AddFamily',
-          path: '/addFamily',
-          builder: (context, params) => const AddFamilyWidget(),
-        ),
-        FFRoute(
-          name: 'Verifyidentity',
-          path: '/verifyidentity',
-          builder: (context, params) => const VerifyidentityWidget(),
-        ),
-        FFRoute(
-          name: 'medicineHomepage',
-          path: '/medicineHomepage',
-          builder: (context, params) => const MedicineHomepageWidget(),
-        ),
-        FFRoute(
-          name: 'UpdateNumberOtp',
-          path: '/UpdateNumberOtp',
-          builder: (context, params) => UpdateNumberOtpWidget(
-            mobilenumber: params.getParam(
-              'mobilenumber',
-              ParamType.String,
+            FFRoute(
+              name: 'History',
+              path: 'history',
+              builder: (context, params) => const HistoryWidget(),
             ),
-          ),
-        ),
-        FFRoute(
-          name: 'Identityverified',
-          path: '/identityverified',
-          builder: (context, params) => const IdentityverifiedWidget(),
-        ),
-        FFRoute(
-          name: 'Schedulehealthcheck-up',
-          path: '/schedulehealthcheckUp',
-          builder: (context, params) => const SchedulehealthcheckUpWidget(),
-        ),
-        FFRoute(
-          name: 'Schedulehealthcheck-up2',
-          path: '/schedulehealthcheckUp2',
-          builder: (context, params) => const SchedulehealthcheckUp2Widget(),
-        ),
-        FFRoute(
-          name: 'Schedulehealthcheck-up3',
-          path: '/schedulehealthcheckUp3',
-          builder: (context, params) => const SchedulehealthcheckUp3Widget(),
-        ),
-        FFRoute(
-          name: 'page1',
-          path: '/page1',
-          builder: (context, params) => const Page1Widget(),
-        ),
-        FFRoute(
-          name: 'page2',
-          path: '/page2',
-          builder: (context, params) => const Page2Widget(),
-        ),
-        FFRoute(
-          name: 'uploadingPrescription',
-          path: '/uploadingPrescription',
-          builder: (context, params) => const UploadingPrescriptionWidget(),
-        ),
-        FFRoute(
-          name: 'History',
-          path: '/history',
-          builder: (context, params) => const HistoryWidget(),
-        ),
-        FFRoute(
-          name: 'medicineCart',
-          path: '/medicineCart',
-          builder: (context, params) => const MedicineCartWidget(),
-        ),
-        FFRoute(
-          name: 'statusOfOrder',
-          path: '/statusOfOrder',
-          builder: (context, params) => const StatusOfOrderWidget(),
-        ),
-        FFRoute(
-          name: 'EligibilityQuestions0',
-          path: '/eligibilityQuestions0',
-          builder: (context, params) => const EligibilityQuestions0Widget(),
-        ),
-        FFRoute(
-          name: 'DencetroCall',
-          path: '/dencetroCall',
-          builder: (context, params) => DencetroCallWidget(
-            url: params.getParam(
-              'url',
-              ParamType.String,
+            FFRoute(
+              name: 'statusOfOrders',
+              path: 'statusOfOrders',
+              builder: (context, params) => StatusOfOrdersWidget(
+                ticketid: params.getParam(
+                  'ticketid',
+                  ParamType.int,
+                ),
+              ),
             ),
-          ),
+            FFRoute(
+              name: 'Home',
+              path: 'home',
+              builder: (context, params) => const HomeWidget(),
+            ),
+            FFRoute(
+              name: 'Cancelled',
+              path: 'cancelled',
+              builder: (context, params) => const CancelledWidget(),
+            ),
+            FFRoute(
+              name: 'medicineCart',
+              path: 'medicineCart',
+              builder: (context, params) => MedicineCartWidget(
+                ticketId: params.getParam(
+                  'ticketId',
+                  ParamType.int,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'Location',
+              path: 'location',
+              builder: (context, params) => const LocationWidget(),
+            ),
+            FFRoute(
+              name: 'PhoneAuth',
+              path: 'phoneAuth',
+              builder: (context, params) => const PhoneAuthWidget(),
+            ),
+            FFRoute(
+              name: 'Otp',
+              path: 'otp',
+              builder: (context, params) => OtpWidget(
+                number: params.getParam(
+                  'number',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'Profile',
+              path: 'profile',
+              requireAuth: true,
+              builder: (context, params) => const ProfileWidget(),
+            ),
+            FFRoute(
+              name: 'Ordermedicine',
+              path: 'ordermedicine',
+              builder: (context, params) => const OrdermedicineWidget(),
+            ),
+            FFRoute(
+              name: 'PaymentSuccess',
+              path: 'paymentSuccess',
+              builder: (context, params) => PaymentSuccessWidget(
+                ticketId: params.getParam(
+                  'ticketId',
+                  ParamType.int,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'PaymentFailed',
+              path: 'paymentFailed',
+              builder: (context, params) => PaymentFailedWidget(
+                ticketid: params.getParam(
+                  'ticketid',
+                  ParamType.int,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'statusOfOrder',
+              path: 'statusOfOrder',
+              builder: (context, params) => StatusOfOrderWidget(
+                ticketid: params.getParam(
+                  'ticketid',
+                  ParamType.int,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+                orderRef: params.getParam(
+                  'orderRef',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['Orders'],
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'statusOfOrder3',
+              path: 'statusOfOrder3',
+              builder: (context, params) => const StatusOfOrder3Widget(),
+            ),
+            FFRoute(
+              name: 'statusOfOrder4',
+              path: 'statusOfOrder4',
+              builder: (context, params) => const StatusOfOrder4Widget(),
+            ),
+            FFRoute(
+              name: 'statusOfOrder5',
+              path: 'statusOfOrder5',
+              builder: (context, params) => const StatusOfOrder5Widget(),
+            ),
+            FFRoute(
+              name: 'Userlogdata',
+              path: 'userlogdata',
+              builder: (context, params) => const UserlogdataWidget(),
+            ),
+            FFRoute(
+              name: 'Settings',
+              path: 'settings',
+              requireAuth: true,
+              builder: (context, params) => const SettingsWidget(),
+            ),
+            FFRoute(
+              name: 'changeLocation',
+              path: 'changeLocation',
+              builder: (context, params) => ChangeLocationWidget(
+                lat: params.getParam(
+                  'lat',
+                  ParamType.String,
+                ),
+                lng: params.getParam(
+                  'lng',
+                  ParamType.String,
+                ),
+                orderRecordId: params.getParam(
+                  'orderRecordId',
+                  ParamType.String,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+                addressId: params.getParam(
+                  'addressId',
+                  ParamType.String,
+                ),
+                tag: params.getParam(
+                  'tag',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'searchAndDiscoveryHome',
+              path: 'searchAndDiscoveryHome',
+              builder: (context, params) => const SearchAndDiscoveryHomeWidget(),
+            ),
+            FFRoute(
+              name: 'searchAndDiscover2',
+              path: 'searchAndDiscover2',
+              builder: (context, params) => const SearchAndDiscover2Widget(),
+            ),
+            FFRoute(
+              name: 'Addressbook',
+              path: 'addressbook',
+              builder: (context, params) => const AddressbookWidget(),
+            ),
+            FFRoute(
+              name: 'PolicyWebview',
+              path: 'policyWebview',
+              builder: (context, params) => const PolicyWebviewWidget(),
+            ),
+            FFRoute(
+              name: 'searchMedicine',
+              path: 'searchMedicine',
+              builder: (context, params) => const SearchMedicineWidget(),
+            ),
+            FFRoute(
+              name: 'searchAndAutoSuggest',
+              path: 'searchAndAutoSuggest',
+              builder: (context, params) => const SearchAndAutoSuggestWidget(),
+            ),
+            FFRoute(
+              name: 'productDescriptionPage',
+              path: 'productDescriptionPage',
+              builder: (context, params) => const ProductDescriptionPageWidget(),
+            ),
+            FFRoute(
+              name: 'MedicineInformation',
+              path: 'medicineInformation',
+              builder: (context, params) => MedicineInformationWidget(
+                productid: params.getParam(
+                  'productid',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'searchMedicineCopy',
+              path: 'searchMedicineCopy',
+              builder: (context, params) => const SearchMedicineCopyWidget(),
+            ),
+            FFRoute(
+              name: 'cartEmpty',
+              path: 'cartEmpty',
+              builder: (context, params) => const CartEmptyWidget(),
+            ),
+            FFRoute(
+              name: 'SearchLocationCopy',
+              path: 'searchLocationCopy',
+              builder: (context, params) => SearchLocationCopyWidget(
+                recordId: params.getParam(
+                  'recordId',
+                  ParamType.String,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+                addLocation: params.getParam(
+                  'addLocation',
+                  ParamType.String,
+                ),
+                addressId: params.getParam(
+                  'addressId',
+                  ParamType.String,
+                ),
+                tag: params.getParam(
+                  'tag',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'SearchLocation',
+              path: 'searchLocation',
+              builder: (context, params) => SearchLocationWidget(
+                recordId: params.getParam(
+                  'recordId',
+                  ParamType.String,
+                ),
+                addLocation: params.getParam(
+                  'addLocation',
+                  ParamType.String,
+                ),
+                addressId: params.getParam(
+                  'addressId',
+                  ParamType.String,
+                ),
+                tag: params.getParam(
+                  'tag',
+                  ParamType.String,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'searchMedicineCopy2',
+              path: 'searchMedicineCopy2',
+              builder: (context, params) => const SearchMedicineCopy2Widget(),
+            ),
+            FFRoute(
+              name: 'UpdateApp',
+              path: 'updateApp',
+              builder: (context, params) => const UpdateAppWidget(),
+            ),
+            FFRoute(
+              name: 'SearchLocationCopy2',
+              path: 'searchLocationCopy2',
+              builder: (context, params) => SearchLocationCopy2Widget(
+                recordId: params.getParam(
+                  'recordId',
+                  ParamType.String,
+                ),
+                addLocation: params.getParam(
+                  'addLocation',
+                  ParamType.String,
+                ),
+                addressId: params.getParam(
+                  'addressId',
+                  ParamType.String,
+                ),
+                tag: params.getParam(
+                  'tag',
+                  ParamType.String,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'HistoryCopy',
+              path: 'historyCopy',
+              builder: (context, params) => const HistoryCopyWidget(),
+            ),
+            FFRoute(
+              name: 'statusOfOrderCopy',
+              path: 'statusOfOrderCopy',
+              builder: (context, params) => StatusOfOrderCopyWidget(
+                ticketid: params.getParam(
+                  'ticketid',
+                  ParamType.int,
+                ),
+                pagename: params.getParam(
+                  'pagename',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'HomeCopy',
+              path: 'homeCopy',
+              builder: (context, params) => const HomeCopyWidget(),
+            )
+          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
-        FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
-        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
@@ -433,7 +600,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/onboarding';
+            return '/phoneAuth';
           }
           return null;
         },
@@ -447,17 +614,19 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primary,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/Property_1=White.png',
-                      width: MediaQuery.sizeOf(context).width * 0.7,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
-              : page;
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primary,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/Plazza_Branding.png',
+                          width: MediaQuery.sizeOf(context).width * 0.8,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    )
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

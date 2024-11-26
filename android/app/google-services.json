@@ -1,26 +1,128 @@
 {
   "project_info": {
-    "project_number": "805598234739",
-    "project_id": "assignment-lt408q",
-    "storage_bucket": "assignment-lt408q.appspot.com"
+    "project_number": "843244942407",
+    "firebase_url": "https://plazza-mvp-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "plazza-mvp",
+    "storage_bucket": "plazza-mvp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:805598234739:android:a353c0c0292663e7afc206",
+        "mobilesdk_app_id": "1:843244942407:android:73896400523ed07444ad62",
         "android_client_info": {
           "package_name": "com.plazza"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "843244942407-9pkkpjjqgob3chjcm6c0j245qrp0r39r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza",
+            "certificate_hash": "8a65e1030d18a3f5d48a7d61ec82b28cc6bb58f0"
+          }
+        },
+        {
+          "client_id": "843244942407-ogaqm2h0cgljof1u12h5v1jookqste69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "843244942407-r3fiq61gs4mnib7h87okd4fvro866a4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza",
+            "certificate_hash": "3ffbe5e51f9f4c549d61d313cc03d1fab619c958"
+          }
+        },
+        {
+          "client_id": "843244942407-im0nmqbgdobl02rplu9sujienb75s0q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBRYXkoEU_6KWRY3FOYVoMjZGRZ8JOi9_M"
+          "current_key": "AIzaSyDm3osG14NROQBR7-OBDuE2KO-FldLkA_I"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843244942407-im0nmqbgdobl02rplu9sujienb75s0q3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843244942407-gcu48t60tbaeismdc13feebk1vrq3cpj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.plazza.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843244942407:android:80deddd9b19ae3d244ad62",
+        "android_client_info": {
+          "package_name": "com.plazza.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843244942407-afuragds6t10929622ano4e0sphlv5j8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza.app",
+            "certificate_hash": "3ffbe5e51f9f4c549d61d313cc03d1fab619c958"
+          }
+        },
+        {
+          "client_id": "843244942407-f7jcurgqclmfd93v5n54e2qkgjctt5tf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza.app",
+            "certificate_hash": "3b31054f232eda83fb2f82bcfe98ddf5ec707b61"
+          }
+        },
+        {
+          "client_id": "843244942407-trec6piob8o2cvnnsl969brs4jii07tm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plazza.app",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "843244942407-im0nmqbgdobl02rplu9sujienb75s0q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm3osG14NROQBR7-OBDuE2KO-FldLkA_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843244942407-im0nmqbgdobl02rplu9sujienb75s0q3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843244942407-gcu48t60tbaeismdc13feebk1vrq3cpj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.plazza.app"
+              }
+            }
+          ]
         }
       }
     }

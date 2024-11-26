@@ -8,10 +8,13 @@
     The path provided below has to start and end with a slash "/" in order for
     it to work correctly.
 
+    Alternatively, build your application passing the --base-href parameter
+    specifying the new root path of your web app.
+
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
-  <base href="/">
+  <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -26,7 +29,7 @@
   
 
   <!-- Favicon -->
-  <link rel="icon" href="Property_1=White_(1).png" sizes="any"/>
+  <link rel="icon" href="Plazza_App_Icon_Android.png" sizes="any"/>
   
 
   <!-- Open Graph & SEO tags -->
@@ -42,17 +45,14 @@
   <meta name="description" content="Built with FlutterFlow." />
     
 
-  <!-- Status Bar color in Safari browser (iOS) and PWA -->
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#e51a83">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#e51a83">
+  
 
   <link rel="manifest" href="manifest.json">
-  
   
 </head>
 <body>
   
-  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbJmsYeWF94p6IC-2I4AN2r3-13HfFWNo"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.js" type="text/javascript"></script>
   <script type="text/javascript">
     pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.worker.min.js";
@@ -66,13 +66,7 @@
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 	<script src="src/razorpay_checkout.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=');
-      });
-    }
+    {{flutter_bootstrap_js}}
   </script>
-  <script src="main.dart.js" type="application/javascript"></script>
-
 </body>
 </html>

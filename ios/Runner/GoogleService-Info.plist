@@ -2,18 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>843244942407-gcu48t60tbaeismdc13feebk1vrq3cpj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.843244942407-gcu48t60tbaeismdc13feebk1vrq3cpj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>843244942407-9pkkpjjqgob3chjcm6c0j245qrp0r39r.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDgVHVuxHoSF6Zz01jiIqNJ8rmOfj1TAvs</string>
+	<string>AIzaSyCWaiJXfDbJrgmlmtwEICiNW-FpBQ7Eueg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>805598234739</string>
+	<string>843244942407</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.plazza</string>
+	<string>com.plazza.app</string>
 	<key>PROJECT_ID</key>
-	<string>assignment-lt408q</string>
+	<string>plazza-mvp</string>
 	<key>STORAGE_BUCKET</key>
-	<string>assignment-lt408q.appspot.com</string>
+	<string>plazza-mvp.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:805598234739:ios:49f3ebdbf927e4a7afc206</string>
+	<string>1:843244942407:ios:d0a0692e2a4e58b544ad62</string>
+	<key>DATABASE_URL</key>
+	<string>https://plazza-mvp-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>
